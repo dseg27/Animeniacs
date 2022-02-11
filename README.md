@@ -28,10 +28,12 @@ We will use the Similarity Function (an area of supervised machine learning) to 
 
 ### TECHNOLOGIES
 
-Data Wrangling: Python, Pandas, etc.
+Data Wrangling: We will use Pandas to clean and explore data. We will use Python to perform further analysis.
 
-Database: MongoDB
+Database Storage: We plan to use MongoDB as it can support relational and non-relational data. We may decide to integrate images at some point, so we need a database that can handle this.
 
-Machine Learning: NLP Model --> sentence embedding
+Machine Learning: We will use SciKitLearn libraries to implement a cosine_similarity function to compare text.
 
-Visualization: Maybe a Flask app, or GitHub Pages
+Visualization: We will implement our dashboard using either Flask or Github pages--TBD. We will use JavaScript and HTML to customize our dashboard. 
+
+
