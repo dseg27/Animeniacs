@@ -1,12 +1,14 @@
 # Animeniacs
-Data Viz Final Project
+Data Analytics and Visualization Bootcamp 
+FINAL PROJECT 
 
 ## PROPOSAL 
 
-Group Topic:
+Group Topic: Anime
 
-Data Source: 
+Data Source: Kaggle CSVs
 
-Hypothesis: 
+Hypothesis: We can use sentence embedding on anime and movie/show synopses to recommend animes, given someone's top five movies/shows.
 
-Analysis Approach (what ML technique we may want to use to investigate the hypothesis):
+Analysis Approach:
+We will use the Similarity Function (an area of supervised machine learning) to measure how similar synopses are. 
