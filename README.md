@@ -9,8 +9,11 @@ Group Topic: Anime. We are pursuing this topic as we are subject-matter experts 
 ### Data Source: Kaggle CSVs
 
 https://www.kaggle.com/marlesson/myanimelist-dataset-animes-profiles-reviews 
+
 https://www.kaggle.com/shivamb/hulu-movies-and-tv-shows 
+
 https://www.kaggle.com/shivamb/netflix-shows 
+
 https://www.kaggle.com/shivamb/amazon-prime-movies-and-tv-shows 
 
 https://www.kaggle.com/shivamb/disney-movies-and-tv-shows
