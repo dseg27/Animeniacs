@@ -18,7 +18,7 @@ https://www.kaggle.com/shivamb/amazon-prime-movies-and-tv-shows
 https://www.kaggle.com/shivamb/disney-movies-and-tv-shows
 
 
-**Hypothesis: **
+**Hypothesis:**
 
 We can use sentence embedding on anime and movie/show synopses to recommend animes, given someone's top five movies/shows.
 
@@ -31,7 +31,7 @@ Reference: https://towardsdatascience.com/calculating-document-similarities-usin
 
 
 
-**TECHNOLOGIES **
+**TECHNOLOGIES**
 
 Data Wrangling/ Database: Python, Pandas, etc. 
 
