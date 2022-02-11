@@ -4,7 +4,10 @@
 ## FINAL PROJECT
 
 ### PROPOSAL
-Group Topic: Anime. We are pursuing this topic as we are subject-matter experts on Anime and have noticed increased popularity in Anime viewership recently. There is no well-known resource currently available to recommend new anime series or to quantify or forecast trends in anime, so we’re stepping in to fill this need.
+Group Topic: Anime. We are pursuing this topic as we are subject-matter experts on Anime and have noticed increased popularity in Anime viewership recently. 
+## WHY: 
+
+There is no well-known resource currently available to recommend new anime series or to quantify or forecast trends in anime, so we’re stepping in to fill this need.
 
 ### Data Source: Kaggle CSVs
 
@@ -36,4 +39,17 @@ Machine Learning: We will use SciKitLearn libraries to implement a cosine_simila
 
 Visualization: We will implement our dashboard using either Flask or Github pages--TBD. We will use JavaScript and HTML to customize our dashboard. 
 
+_________________________ Machine Learning Model  (35 pts) ___________________________________
+
+Team members will be expected to present a provisional machine learning model that stands in for the final machine learning model and accomplishes the following:
+1.Takes in data from the provisional database
+2. Outputs label for input data
+3. Database Integration
+
+
+________________________ Database (25 pts) ____________________________________
+
+Team members will be expected to present a provisional database that stands in for the final database and accomplishes the following:
+1.  data that mimics the expected final database structure or schema
+2. Draft machine learning model is connected to the provisional database
 
