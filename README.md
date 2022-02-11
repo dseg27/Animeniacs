@@ -33,7 +33,9 @@ Reference: https://towardsdatascience.com/calculating-document-similarities-usin
 
 **TECHNOLOGIES**
 
-Data Wrangling/ Database: Python, Pandas, etc. 
+Data Wrangling: Python, Pandas, etc.
+
+Database: MongoDB, or SQL
 
 Machine Learning: NLP Model --> sentence embedding
 
