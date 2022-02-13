@@ -39,7 +39,7 @@ Machine Learning: We will use SciKitLearn libraries to implement a cosine_simila
 
 Visualization: We will implement our dashboard using either Flask or Github pages--TBD. We will use JavaScript and HTML to customize our dashboard. 
 
-_________________________ **Machine Learning Model ** ___________________________________
+________________________Machine Learning Model  ___________________________________
 
 
 We aim to use scikitLearn's cosine similarity function (https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html#)
@@ -47,7 +47,7 @@ to perform cosine similarity between live-action movie or show synopses and anim
 
 
 
-________________________ **Database **____________________________________
+________________________Database____________________________________
 
 
 Possible database structure in MongoDB, JSON objects: 
