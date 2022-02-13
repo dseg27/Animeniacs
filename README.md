@@ -39,17 +39,16 @@ Machine Learning: We will use SciKitLearn libraries to implement a cosine_simila
 
 Visualization: We will implement our dashboard using either Flask or Github pages--TBD. We will use JavaScript and HTML to customize our dashboard. 
 
-_________________________ Machine Learning Model  (35 pts) ___________________________________
+_________________________ Machine Learning Model  ___________________________________
 
-Team members will be expected to present a provisional machine learning model that stands in for the final machine learning model and accomplishes the following:
-1.Takes in data from the provisional database
-2. Outputs label for input data
-3. Database Integration
+We aim to use scikitLearn's cosine similarity function (https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html#)
+to perform cosine similarity between live-action movie or show synopses and anime synopses. We can use the most similar anime synopses to recommend animes to the user.
 
 
-________________________ Database (25 pts) ____________________________________
 
-Team members will be expected to present a provisional database that stands in for the final database and accomplishes the following:
-1.  data that mimics the expected final database structure or schema
-2. Draft machine learning model is connected to the provisional database
+________________________ Database ____________________________________
+Possible database structure in MongoDB, JSON objects: 
+![image](https://user-images.githubusercontent.com/90593897/153763126-7b5a84f8-4b21-4b67-9ee4-23e8e0f8f5a2.png)
+
+We can then train our data using scikit learn's cosine similarity function. Documentation here: https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html#
 
