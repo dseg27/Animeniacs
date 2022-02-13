@@ -47,6 +47,9 @@ Visualization: We will implement our dashboard using either Flask or Github page
 We aim to use scikitLearn's cosine similarity function (https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html#)
 to perform cosine similarity between live-action movie or show synopses and anime synopses. We can use the most similar anime synopses to recommend animes to the user.
 
+![image](https://user-images.githubusercontent.com/90593897/153766497-8cc5c9a9-eb85-4033-94f2-a43177902162.png)
+
+
 
 
 #### **DATABASE**
