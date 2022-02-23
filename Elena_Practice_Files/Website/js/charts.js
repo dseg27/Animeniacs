@@ -57,3 +57,13 @@ var bar = new Chart(ctx, {
   }
 });
 
+// Import data with d3
+let filename = 'data/cleaned_live_actions.csv'
+
+d3.csv(filename).then(function(loadedData){
+  //let data [];
+  //let labels[];
+  console.log(loadedData);
+
+
+});
