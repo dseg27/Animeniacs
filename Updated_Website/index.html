@@ -16,10 +16,11 @@
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="css/tooplate-style.css" />
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--
-Tooplate 2111 Pro Line
-http://www.tooplate.com/view/2111-pro-line
--->
+    <link rel="stylesheet" href="css/zoom.css">
+    <!--Tooplate 2111 Pro Line http://www.tooplate.com/view/2111-pro-line-->
+    <!-- Chart.js import -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
   </head>
 
   <body>
@@ -140,17 +141,16 @@ http://www.tooplate.com/view/2111-pro-line
       <div class="row">
         <div class="col-lg-6">
           <div class="tm-activity-block">
-            <div class="tm-activity-img-container">
-              <img src="img/img-01.jpg" alt="Image" class="tm-activity-img" />
+            
+              <label class="tm-text-blue">First Block</label>
+            
+
+            <div class="chart-container" style="position: relative; height:30vh; width:40vw">
+              <canvas id="bar" ></canvas>
             </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Lorem ipsum dolor sit amet</h3>
-              <p>
-                Orci varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Sed eu turpis nec sem lacinia
-                condimentum et a orci.
-              </p>
-            </div>
+            
+            
+            
           </div>
         </div>
         <div class="col-lg-6">
@@ -159,11 +159,9 @@ http://www.tooplate.com/view/2111-pro-line
               <img src="img/img-02.jpg" alt="Image" class="tm-activity-img" />
             </div>
             <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Lorem ipsum dolor sit amet</h3>
+              <h3 class="tm-text-blue">secondbox</h3>
               <p>
-                Orci varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Sed eu turpis nec sem lacinia
-                condimentum et a orci.
+                stuff2
               </p>
             </div>
           </div>
@@ -369,6 +367,7 @@ http://www.tooplate.com/view/2111-pro-line
     <!-- Single Page Nav plugin works with this version of jQuery -->
     <script src="js/jquery.singlePageNav.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/charts.js"></script>
     <script>
       /**
        * detect IE
