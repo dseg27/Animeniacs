@@ -1,0 +1,16 @@
+body {
+
+    color: teal;
+  }
+
+  body{
+    color: #f7f7f7;
+}
+
+.jumbotron {
+    background-image: url("../images/scenic.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+  } 
+
+   

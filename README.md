@@ -59,4 +59,3 @@ Possible database structure in MongoDB, JSON objects:
 
 We can then train our data using scikit learn's cosine similarity function. Documentation here: https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html#
 
-
