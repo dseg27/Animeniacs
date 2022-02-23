@@ -52,11 +52,8 @@ to perform cosine similarity between live-action movie or show synopses and anim
 
 
 
-#### **DATABASE**
+#### **PIPELINE**
 
-Possible database structure in MongoDB, JSON objects: 
-![image](https://user-images.githubusercontent.com/90593897/153763126-7b5a84f8-4b21-4b67-9ee4-23e8e0f8f5a2.png)
-
-We can then train our data using scikit learn's cosine similarity function. Documentation here: https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html#
+![data pipeline](https://user-images.githubusercontent.com/90593897/155247929-8042813b-66d4-485c-b34f-144b8cf215a9.png)
 
 
