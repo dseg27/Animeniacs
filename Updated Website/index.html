@@ -16,10 +16,12 @@
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="css/tooplate-style.css" />
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--
-Tooplate 2111 Pro Line
-http://www.tooplate.com/view/2111-pro-line
--->
+    <link rel="stylesheet" href="css/zoom.css">
+    <!--Tooplate 2111 Pro Line http://www.tooplate.com/view/2111-pro-line-->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!-- Chart.js import -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
   </head>
 
   <body>
@@ -138,67 +140,49 @@ http://www.tooplate.com/view/2111-pro-line
         </div>
       </div>
       <div class="row">
+
+        <!-- Top left image block -->
         <div class="col-lg-6">
           <div class="tm-activity-block">
-            <div class="tm-activity-img-container">
-              <img src="img/img-01.jpg" alt="Image" class="tm-activity-img" />
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Lorem ipsum dolor sit amet</h3>
-              <p>
-                Orci varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Sed eu turpis nec sem lacinia
-                condimentum et a orci.
-              </p>
-            </div>
+              <label class="tm-text-blue">First Block</label>           
+              <div class="chart-container" style="position: relative; height:30vh; width:40vw">
+                 <canvas id="bar" ></canvas>
+              </div> 
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="tm-activity-block mr-lg-0 ml-lg-auto">
-            <div class="tm-activity-img-container">
-              <img src="img/img-02.jpg" alt="Image" class="tm-activity-img" />
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Lorem ipsum dolor sit amet</h3>
-              <p>
-                Orci varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Sed eu turpis nec sem lacinia
-                condimentum et a orci.
-              </p>
-            </div>
-          </div>
-        </div>
+
+        <!-- Top right image block -->
         <div class="col-lg-6">
           <div class="tm-activity-block">
-            <div class="tm-activity-img-container">
-              <img src="img/img-03.jpg" alt="Image" class="tm-activity-img" />
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Lorem ipsum dolor sit amet</h3>
-              <p>
-                Orci varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Sed eu turpis nec sem lacinia
-                condimentum et a orci.
-              </p>
-            </div>
+              <label class="tm-text-blue">Second Block</label>           
+              <div class="chart-container" style="position: relative; height:30vh; width:40vw">
+                 <canvas id="line" ></canvas>
+              </div> 
           </div>
         </div>
+
+        <!-- Bottom left image block -->
         <div class="col-lg-6">
-          <div class="tm-activity-block mr-lg-0 ml-lg-auto">
-            <div class="tm-activity-img-container">
-              <img src="img/img-04.jpg" alt="Image" class="tm-activity-img" />
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Lorem ipsum dolor sit amet</h3>
-              <p>
-                Orci varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Sed eu turpis nec sem lacinia
-                condimentum et a orci.
-              </p>
-            </div>
+          <div class="tm-activity-block">
+              <label class="tm-text-blue">Third Block</label>           
+              <div class="chart-container" style="position: relative; height:30vh; width:40vw">
+                 <canvas id="bar2" ></canvas>
+              </div> 
           </div>
         </div>
-      </div>
+
+        <!-- Bottom right image block -->
+        <div class="col-lg-6">
+          <div class="tm-activity-block">
+              <label class="tm-text-blue">Fourth Block</label>           
+              <div class="chart-container" style="position: relative; height:30vh; width:40vw">
+                 <canvas id="bar3" ></canvas>
+              </div> 
+          </div>
+        </div>
+
+
+      </div> <!-- end of image blocks -->
     </div>
 
     <section class="container tm-company-section" id="company">
@@ -215,12 +199,144 @@ http://www.tooplate.com/view/2111-pro-line
               <p>
                 Input/Output function here 
               </p>
+            
+              <a href="#" class="btn tm-btn tm-float-right">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-xl-9 col-lg-4 col-md-12 tm-company-right  ml-lg-auto mr-lg-0"
+        >
+          <div class="tm-company-right-inner">
+            <ul class="nav nav-tabs" id="tmCompanyTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link tm-nav-link-border-right active"
+                  id="vision-tab"
+                  data-toggle="tab"
+                  href="#vision"
+                  role="tab"
+                  aria-controls="vision"
+                  aria-selected="true"
+                  >Vision</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link tm-no-border-right"
+                  id="mission-tab"
+                  data-toggle="tab"
+                  href="#mission"
+                  role="tab"
+                  aria-controls="mission"
+                  aria-selected="false"
+                  >Mission</a
+                >
+              </li>
+            </ul>
+            <div class="tab-content" id="tmTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="vision"
+                role="tabpanel"
+                aria-labelledby="vision-tab"
+              >
+                <p>
+                  Phasellus suscipit sapien magna, vel dictum lorem fringilla.
+                </p>
+                <p>
+                  Class aptent taciti sociosqu ad litora torquent per conubia
+                  nostra.
+                </p>
+                <p>
+                  Nulla ornare ligula nibh, sit amet tristique magna efficitur
+                  eu.
+                </p>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="mission"
+                role="tabpanel"
+                aria-labelledby="mission-tab"
+              >
+                <p>
+                  Class aptent taciti sociosqu ad litora torquent per conubia
+                  nostra.
+                </p>
+                <p>
+                  Nulla ornare ligula nibh, sit amet tristique magna efficitur
+                  eu.
+                </p>
+                <p>
+                  Phasellus suscipit sapien magna, vel dictum lorem fringilla.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    
+    <!-- Contact -->
+    <section class="container tm-contact-section" id="contact">
+      <div class="row">
+        <div class="col-xl-5 col-lg-6 col-md-12 tm-contact-left">
+          <div class="tm-contact-form-container ml-auto mr-0">
+            <header>
+              <h2 class="tm-contact-header">Contact Us</h2>
+            </header>
+            <form action="index.html" class="tm-contact-form" method="POST">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="contact_name"
+                  name="contact_name"
+                  class="form-control"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="contact_email"
+                  name="contact_email"
+                  class="form-control"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  rows="5"
+                  id="contact_message"
+                  name="contact_message"
+                  class="form-control"
+                  placeholder="Message"
+                  required
+                ></textarea>
+              </div>
+              <div class="tm-text-right">
+                <button type="submit" class="btn tm-btn tm-btn-big">
+                  Send It
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-xl-7 col-lg-6 col-md-12 tm-contact-right">
+          <div class="tm-contact-figure-block">
+            <figure class="d-inline-block">
+              <img src="img/img-06.jpg" alt="Image" class="img-fluid" />
+              <figcaption class="tm-contact-figcaption">
+                Nulla arcu tortor, mattis in diam eget, hendrerit vulputate
+                ligula. Nam non purus consequat, dictum lectus lobortis, laoreet
+                nibh. Cras vitae facilisis felis. Phasellus tristique.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer class="container tm-footer">
       <div class="row tm-footer-row">
         <p class="col-md-10 col-sm-12 mb-0">
@@ -237,6 +353,7 @@ http://www.tooplate.com/view/2111-pro-line
     <!-- Single Page Nav plugin works with this version of jQuery -->
     <script src="js/jquery.singlePageNav.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/charts.js"></script>
     <script>
       /**
        * detect IE
