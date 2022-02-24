@@ -4,64 +4,120 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // Bar Chart Example
-var ctx = document.getElementById("bar");
-var bar = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ["2000", "2005", "2010", "2015", "2020"],
-    datasets: [{
-      label: "India",
-      backgroundColor: "dodgerblue",
-      borderColor: "transparent",
-      data: [1057, 1148, 1234, 1310, 1380],
-    },
-    {
-      label: "China",
-      backgroundColor: "purple",
-      borderColor: "transparent",
-      data: [1291, 1331, 1369, 1407, 1439],
-    },
-    {
-      label: "United States",
-      backgroundColor: "red",
-      borderColor: "transparent",
-      data: [282, 295, 309, 321, 331],
-    },
-    {
-      label: "US",
-      backgroundColor: "green",
-      borderColor: "transparent",
-      data: [282, 295, 309, 321, 331],
-    },
-    ],
-  },
-  options: {
-    scales: {
-      xAxes: [{
-        time: {
-          unit: 'year'
-        },
-        gridLines: {
-          display: false
-        },
-        ticks: {
-          maxTicksLimit: 6
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          min: 0,
-        },
-        gridLines: {
-          display: true
-        }
-      }],
-    },
-    legend: {
-      display: true
-    }
+// var ctx = document.getElementById("bar");
+// var bar = new Chart(ctx, {
+//   type: 'bar',
+//   data: {
+//     labels: ["2000", "2005", "2010", "2015", "2020"],
+//     datasets: [{
+//       label: "India",
+//       backgroundColor: "dodgerblue",
+//       borderColor: "transparent",
+//       data: [1057, 1148, 1234, 1310, 1380],
+//     },
+//     {
+//       label: "China",
+//       backgroundColor: "purple",
+//       borderColor: "transparent",
+//       data: [1291, 1331, 1369, 1407, 1439],
+//     },
+//     {
+//       label: "United States",
+//       backgroundColor: "red",
+//       borderColor: "transparent",
+//       data: [282, 295, 309, 321, 331],
+//     },
+//     {
+//       label: "US",
+//       backgroundColor: "green",
+//       borderColor: "transparent",
+//       data: [282, 295, 309, 321, 331],
+//     },
+//     ],
+//   },
+//   options: {
+//     scales: {
+//       xAxes: [{
+//         time: {
+//           unit: 'year'
+//         },
+//         gridLines: {
+//           display: false
+//         },
+//         ticks: {
+//           maxTicksLimit: 6
+//         }
+//       }],
+//       yAxes: [{
+//         ticks: {
+//           min: 0,
+//         },
+//         gridLines: {
+//           display: true
+//         }
+//       }],
+//     },
+//     legend: {
+//       display: true
+//     }
+//   }
+// });
+
+// ANIME SCORE VS EPISODES SCATTER PLOT!!
+
+let filename1 = 'chart_data/chart_anime.csv'
+d3.csv(filename1).then(function(loadedData){
+  let ep = [];
+  let sc = [];
+
+  // x= anime_test_df['episodes'] 
+  // y= anime_test_df['score']
+
+  for (let i=0; i<loadedData.length; i++){
+    let episodes = loadedData[i].episodes;
+    ep.push(episodes)
+
+    let score = loadedData[i].score;
+    sc.push(score)
+
   }
+  let coords = ep.map( (v,i) => ({ x: v, y: sc[i] }) )
+
+  console.log(coords)
+
+  const ctx = document.getElementById('scatter');
+  const scatter = new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: "Scatter Dataset",
+            data: coords
+          }
+        ]},
+        options: {
+          responsive: true,
+          scales: {
+            xAxes: [ {
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'episodes'
+              },
+            } ],
+            yAxes: [ {
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'scores'
+              }
+            } ]
+          }
+        }
+      
+  })
 });
+  
 
 // TIME SERIES CHART!!
 
@@ -99,6 +155,25 @@ d3.csv(filename).then(function(loadedData){
           fill: true,
         }]
 
+      },
+      options: {
+        responsive: true,
+        scales: {
+          xAxes: [ {
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'year released'
+            },
+          } ],
+          yAxes: [ {
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'number of shows released'
+            }
+          } ]
+        }
       }
     })
 
@@ -154,7 +229,7 @@ d3.csv(filename2).then(function(loadedData){
   
   }
   const ctx = document.getElementById('bar2');
-  const line = new Chart(ctx, {
+  const bar2 = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: ["Movies", "Shows"],
@@ -190,6 +265,18 @@ d3.csv(filename2).then(function(loadedData){
         },
         ],
       },
+      options: {
+        responsive: true,
+        scales: {
+          yAxes: [ {
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'Number Titles'
+            }
+          } ]
+        }
+      }
     })
 
 });
@@ -230,7 +317,7 @@ d3.csv(filename3).then(function(loadedData){
   console.log(animegenres)
 
   const ctx = document.getElementById('bar3');
-  const line = new Chart(ctx, {
+  const bar3 = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: labels,
@@ -273,7 +360,14 @@ d3.csv(filename3).then(function(loadedData){
         options: {
           scales: {
             xAxes: [{ stacked: true }],
-            yAxes: [{ stacked: true }]
+            yAxes: [{ stacked: true,
+            
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Number Titles'
+              }
+            } ]
           }
         }
 
