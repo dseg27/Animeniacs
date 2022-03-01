@@ -2,7 +2,6 @@
 // Set new default font family and font color to mimic Bootstrap's default styling
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
-
 // Bar Chart Example
 // var ctx = document.getElementById("bar");
 // var bar = new Chart(ctx, {
@@ -69,6 +68,7 @@ let filename1 = 'chart_data/chart_anime.csv'
 d3.csv(filename1).then(function(loadedData){
   let ep = [];
   let sc = [];
+  let titles = [];
 
   // x= anime_test_df['episodes'] 
   // y= anime_test_df['score']
@@ -79,30 +79,84 @@ d3.csv(filename1).then(function(loadedData){
 
     let score = loadedData[i].score;
     sc.push(score)
+    
+    let title = loadedData[i].title;
+    titles.push(title)
+
 
   }
-  let coords = ep.map( (v,i) => ({ x: v, y: sc[i] }) )
+  let coords = ep.map( (v,i) => ({ x: v, y: sc[i], title: titles[i] }) )
 
-  console.log(coords)
+  //console.log(coords)
 
+  
+  
   const ctx = document.getElementById('scatter');
   const scatter = new Chart(ctx, {
       type: 'scatter',
       data: {
+        labels: "scatter dataset",
         datasets: [
           {
-            label: "Scatter Dataset",
-            data: coords
+            label: "Scatter ",
+            backgroundColor: "rgba(250,192,231,0.4)",
+            borderColor: "rgb(250,192,231)",
+            data: coords,
+            labels: titles,
           }
         ]},
+        
         options: {
+          legend: {
+            display: false,
+          },
+            // plugins: {
+                tooltip: {
+                  //enabled: true,
+                    callbacks: {
+                      label: function(scatter) {
+                        //let label = scatter.dataset.labels || '';
+                        let label = titles
+
+                        
+                        return label;
+                      }
+
+                      //label: function(tooltipItem, scatter){
+                       // let t_label = (scatter.config.data.datasets[tooltipItem.index].data[tooltipItem.index].title);
+                        // t_label += " (" + scatter.parsed.x + ", " + scatter.parsed.y + ")";
+                       // return t_label;
+                      //},
+                      // afterLabel: (tooltipItem, data) => [`${x}: ${tooltipItem.xLabel}`, `${y}: ${tooltipItem.yLabel}`]
+
+                      //title: (tooltipItem, data) => "New title"
+                          
+                          // let tit = titles[coords.dataIndex];
+                          // titles += " (" + ctx.parsed.x + ", " + ctx.parsed.y + ")";
+                          // return labels[coords.dataIndex];
+                          //label = datasets.labels[titles.datasetIndex];
+                          //return label;
+                            
+                            
+                        
+                    }
+                // }
+            },
+          borderWidth: 0,
+
           responsive: true,
+          title: {
+            display: true,
+            text: 'Top 50 Animes Ranked: Length of Shows vs Scores',
+          },  
+          showLines: false,
           scales: {
+            bounds: 'ticks',
             xAxes: [ {
               display: true,
               scaleLabel: {
                 display: true,
-                labelString: 'episodes'
+                labelString: 'Length of Show (Number of Episodes)'
               },
             } ],
             yAxes: [ {
@@ -112,10 +166,16 @@ d3.csv(filename1).then(function(loadedData){
                 labelString: 'scores'
               }
             } ]
-          }
+          },
+          
+     
         }
-      
   })
+  //console.log(coords[dataIndex].title)
+  console.log(scatter.config.data.datasets[0].data[0].title)
+  //console.log(scatter.config.data.datasets[0].data[0].titles)
+ // console.log(titles[coords.datasetIndex]);
+  //console.log(everything);
 });
   
 
@@ -137,7 +197,7 @@ d3.csv(filename).then(function(loadedData){
     let animeCount = loadedData[i].count_animes;
     animedata.push(animeCount)
   }
-  console.log(animedata)
+  // console.log(animedata)
 
   const ctx = document.getElementById('line');
   const line = new Chart(ctx, {
@@ -151,12 +211,29 @@ d3.csv(filename).then(function(loadedData){
         },
         {
           label: "Anime",
+          backgroundColor: "rgba(250,192,231,0.6)",
+          borderColor: "rgb(250,192,231)",
           data: animedata,
           fill: true,
         }]
 
       },
       options: {
+        tooltips: {
+          callbacks: {
+            title:function(item, everything){
+              return;
+            },
+            // label: function(item, everything){
+              // console.log(item);
+              // console.log(everything);
+
+              
+
+           // }
+
+          }
+        },
         responsive: true,
         scales: {
           xAxes: [ {
@@ -225,7 +302,7 @@ d3.csv(filename2).then(function(loadedData){
     }
 
   
-   console.log(anime)
+   // console.log(anime)
   
   }
   const ctx = document.getElementById('bar2');
@@ -235,31 +312,31 @@ d3.csv(filename2).then(function(loadedData){
         labels: ["Movies", "Shows"],
         datasets: [{
           label: "Netflix",
-          backgroundColor: "dodgerblue",
+          backgroundColor: "red",
           borderColor: "transparent",
           data: netflix,
         },
         {
           label: "Hulu",
-          backgroundColor: "purple",
+          backgroundColor: "green",
           borderColor: "transparent",
           data: hulu,
         },
         {
           label: "Amazon",
-          backgroundColor: "red",
+          backgroundColor: "dodgerblue",
           borderColor: "transparent",
           data: amazon,
         },
         {
           label: "Disney",
-          backgroundColor: "green",
+          backgroundColor: "purple",
           borderColor: "transparent",
           data: disney,
         },
         {
           label: "Animes",
-          backgroundColor: "pink",
+          backgroundColor: "rgb(250,192,231)",
           borderColor: "transparent",
           data: anime,
         },
@@ -314,7 +391,7 @@ d3.csv(filename3).then(function(loadedData){
     let animgenrecount = loadedData[i].anime;
     animegenres.push(animgenrecount);
   }
-  console.log(animegenres)
+  // console.log(animegenres)
 
   const ctx = document.getElementById('bar3');
   const bar3 = new Chart(ctx, {
@@ -324,34 +401,34 @@ d3.csv(filename3).then(function(loadedData){
         datasets: [{
           label: "Netflix",
           data: netflixgenres,
-          backgroundColor: "dodgerblue",
+          backgroundColor: "red",
           borderColor: "transparent",
           fill: true,
         },
         {
           label: "Hulu",
-          backgroundColor: "purple",
+          backgroundColor: "green",
           borderColor: "transparent",
           data: hulugenres,
           fill: true,
         },
         {
           label: "Amazon",
-          backgroundColor: "red",
+          backgroundColor: "dodgerblue",
           borderColor: "transparent",
           data: amazongenres,
           fill: true,
         },
         {
           label: "Disney",
-          backgroundColor: "green",
-          borderColor: "transparent",
+          backgroundColor: "purple",
+          borderColor: "black",
           data: disneygenres,
           fill: true,
         },
         {
           label: "Anime",
-          backgroundColor: "pink",
+          backgroundColor: "rgb(250,192,231)",
           borderColor: "transparent",
           data: animegenres,
           fill: true,
@@ -359,15 +436,21 @@ d3.csv(filename3).then(function(loadedData){
         },
         options: {
           scales: {
-            xAxes: [{ stacked: true }],
-            yAxes: [{ stacked: true,
-            
+            xAxes: [{ stacked: true,
               display: true,
               scaleLabel: {
                 display: true,
-                labelString: 'Number Titles'
+                labelString: 'Top 5 Anime Genres'
               }
-            } ]
+            }],
+
+            yAxes: [{ stacked: true,
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Number of Titles'
+              }
+            }]
           }
         }
 
