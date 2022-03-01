@@ -16,10 +16,19 @@
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="css/tooplate-style.css" />
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--
-Tooplate 2111 Pro Line
-http://www.tooplate.com/view/2111-pro-line
--->
+    <!--Tooplate 2111 Pro Line http://www.tooplate.com/view/2111-pro-line -->
+
+
+    <!-- https://makitweb.com/make-a-dropdown-with-search-box-using-jquery/ -->
+    <!-- Select2 CSS --> 
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" /> 
+
+    <!-- jQuery --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+
+    <!-- Select2 JS --> 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
   </head>
 
   <body>
@@ -62,11 +71,14 @@ http://www.tooplate.com/view/2111-pro-line
                     <a class="nav-link" href="#features">About</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#activities">Top 25</a>
-                  </li>
-                  <li class="nav-item">
                     <a class="nav-link" href="#company">Find an Anime</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#activities">Visualizations</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="#company">Find an Anime</a>
+                  </li> -->
                 </ul>
               </div>
             </nav>
@@ -101,19 +113,18 @@ http://www.tooplate.com/view/2111-pro-line
       <div class="row tm-features-row">
         <section class="col-md-6 col-sm-12 tm-feature-block">
           <header class="tm-feature-header">
-            <i class="fa fa-4x fa-television" aria-hidden="true"></i>
-            <h3 class="tm-feature-h">What you need to know</h3>
+            
+            <h3 class="tm-feature-h">ABOUT</h3>
           </header>
           <p>
             Anime is increasing in popularity, and there are so many great shows to explore.
           </p>
           <p>
-            There are several great titles on popular streaming services that you already watch live-action shows on, including Netflix, Hulu, Amazon, and Disney Plus.
+            There are several great Animes to watch on popular streaming services that you already watch live-action shows on-- Netflix, Hulu, Amazon, and Disney Plus.
           </p>
         </section>
         <section class="col-md-6 col-sm-12 tm-feature-block">
           <header class="tm-feature-header">
-            <i class="fa fa-4x fa-question-circle" aria-hidden="true"></i>
             <h3 class="tm-feature-h">Don't know where to start?</h3>
           </header>
           <p>
@@ -126,81 +137,7 @@ http://www.tooplate.com/view/2111-pro-line
       </div>
     </div>
 
-    <!-- Top 25 -->
-    <div class="container" id="activities">
-      <div class="row">
-        <div class="col-12">
-          <div class="tm-parallax">
-            <header class="tm-parallax-header">
-              <h2 class="">Top 25</h2>
-            </header>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="tm-activity-block">
-            <div class="tm-activity-img-container">
-              <img src="img/img-01.jpg" alt="Image" class="tm-activity-img" />
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Lorem ipsum dolor sit amet</h3>
-              <p>
-                Orci varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Sed eu turpis nec sem lacinia
-                condimentum et a orci.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="tm-activity-block mr-lg-0 ml-lg-auto">
-            <div class="tm-activity-img-container">
-              <img src="img/img-02.jpg" alt="Image" class="tm-activity-img" />
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Lorem ipsum dolor sit amet</h3>
-              <p>
-                Orci varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Sed eu turpis nec sem lacinia
-                condimentum et a orci.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="tm-activity-block">
-            <div class="tm-activity-img-container">
-              <img src="img/img-03.jpg" alt="Image" class="tm-activity-img" />
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Lorem ipsum dolor sit amet</h3>
-              <p>
-                Orci varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Sed eu turpis nec sem lacinia
-                condimentum et a orci.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="tm-activity-block mr-lg-0 ml-lg-auto">
-            <div class="tm-activity-img-container">
-              <img src="img/img-04.jpg" alt="Image" class="tm-activity-img" />
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Lorem ipsum dolor sit amet</h3>
-              <p>
-                Orci varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Sed eu turpis nec sem lacinia
-                condimentum et a orci.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+ <!-- MACHINE LEARNING ASPECT! -->
     <section class="container tm-company-section" id="company">
       <div class="row">
         <div class="col-xl-9 col-lg-8 col-md-12 tm-company-left">
@@ -212,19 +149,108 @@ http://www.tooplate.com/view/2111-pro-line
               <header>
                 <h2 class="tm-company-about-header">Find an Anime</h2>
               </header>
-              <p>
-                Input/Output function here 
-              </p>
+
+              <!-- Dropdown --> 
+             <label>1: Choose a live action title:</label>
+             <select class = "s2" id='selUser' style='width: 200px;'>
+
+              <script>
+                var live_data = fetch("live_data.json")
+               .then(response => response.json())
+               .then(live_data =>{
+                    for (i=0; i<live_data.length; i++){
+                        live_data[i] = live_data[i].title;
+                    }
+                    let text = "";
+                    for (let c = 0; c < 50; c++) { 
+                        text += "<option value='" + c +"'>" + live_data[c] + "</option> <br>";
+                        document.getElementById("selUser").innerHTML = text; 
+                      }             
+                }) 
+              </script>
+             </select>
+
+            <input type='button' value='2: Click To Find Your Recommended Anime' id='but_read'>
+
+            <br/>
+             <div id='result'></div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Extra Visuals -->
+    <div class="container" id="activities">
+      <div class="row">
+        <div class="col-12">
+          <div class="tm-parallax">
+            <header class="tm-parallax-header">
+              <h2 class="">CHARTS AND GRAPHS</h2>
+            </header>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="tm-activity-block">
+            <div class="tm-activity-img-container">
+              <img src="img/img-01.jpg" alt="Image" class="tm-activity-img" />
+            </div>
+            <div class="tm-activity-block-text">
+              <h3 class="tm-text-blue">Data Visual #1</h3>
+              <p>
+                chart or graph here
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="tm-activity-block mr-lg-0 ml-lg-auto">
+            <div class="tm-activity-img-container">
+              <img src="img/img-02.jpg" alt="Image" class="tm-activity-img" />
+            </div>
+            <div class="tm-activity-block-text">
+              <h3 class="tm-text-blue">Data Visual 2</h3>
+              <p>
+                chart or graph here
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="tm-activity-block">
+            <div class="tm-activity-img-container">
+              <img src="img/img-03.jpg" alt="Image" class="tm-activity-img" />
+            </div>
+            <div class="tm-activity-block-text">
+              <h3 class="tm-text-blue">Data Visual 3</h3>
+              <p>
+                Chart or graph here
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="tm-activity-block mr-lg-0 ml-lg-auto">
+            <div class="tm-activity-img-container">
+              <img src="img/img-04.jpg" alt="Image" class="tm-activity-img" />
+            </div>
+            <div class="tm-activity-block-text">
+              <h3 class="tm-text-blue">Data Visual 4</h3>
+              <p>
+                Chart or graph here
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <footer class="container tm-footer">
       <div class="row tm-footer-row">
         <p class="col-md-10 col-sm-12 mb-0">
-          Copyright &copy; 2018 Company Name - Design:
+          Design:
           <a rel="nofollow" href="https://www.facebook.com/tooplate" class="tm-footer-link">Tooplate</a>
         </p>
         <div class="col-md-2 col-sm-12 scrolltop">
@@ -233,7 +259,7 @@ http://www.tooplate.com/view/2111-pro-line
       </div>
     </footer>
 
-    <script src="js/jquery-1.9.1.min.js"></script>
+    <!-- <script src="js/jquery-1.9.1.min.js"></script> -->
     <!-- Single Page Nav plugin works with this version of jQuery -->
     <script src="js/jquery.singlePageNav.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -386,5 +412,6 @@ http://www.tooplate.com/view/2111-pro-line
         });
       });
     </script>
+    <script src="js/data.js"></script>
   </body>
 </html>
