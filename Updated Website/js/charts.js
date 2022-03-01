@@ -252,16 +252,14 @@ d3.csv(filename).then(function(loadedData){
                 titleCount + ' '+ label +' titles released in ' + year 
               ]
             },
-            // label: function(item, everything){
-              // console.log(item);
-              // console.log(everything);
-
-              
-
-           // }
+        
 
           }
         },
+        title: {
+          display: true,
+          text: ['Anime Growth Over time: New Titles released each year']
+        }, 
         responsive: true,
         scales: {
           xAxes: [ {
@@ -380,7 +378,11 @@ d3.csv(filename2).then(function(loadedData){
               labelString: 'Number Titles'
             }
           } ]
-        }
+        },
+        title: {
+          display: true,
+          text: ['Count of Movies vs Shows by Platform']
+        }, 
       }
     })
 
@@ -479,7 +481,11 @@ d3.csv(filename3).then(function(loadedData){
                 labelString: 'Number of Titles'
               }
             }]
-          }
+          },
+          title: {
+            display: true,
+            text: ['Number of Titles in Top 5 Anime Genres by Platform']
+          }, 
         }
 
       
