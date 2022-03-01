@@ -110,37 +110,52 @@ d3.csv(filename1).then(function(loadedData){
           legend: {
             display: false,
           },
-            // plugins: {
-                tooltip: {
-                  //enabled: true,
-                    callbacks: {
-                      label: function(scatter) {
-                        //let label = scatter.dataset.labels || '';
-                        let label = titles
+          tooltips: {
+            displayColors: false,
+            callbacks: {
+              title: function(tooltipItem, all) {
+                return [
+                  all.datasets[tooltipItem[0].datasetIndex].data[tooltipItem[0].index].title,
+                ]
+              },
+              label: function(tooltipItem, all) {
+                return [
+                  'Number of episodes: ' + tooltipItem.xLabel.toLocaleString() ,
+                  'Score: ' +tooltipItem.yLabel.toLocaleString() 
+                ]
+              }
+            },
 
-                        
-                        return label;
-                      }
+          //tooltip: {
+            
+              //callbacks: {
+               // label: function(scatter) {
+                  //let label = scatter.dataset.labels || '';
+                //  let label = titles
 
-                      //label: function(tooltipItem, scatter){
-                       // let t_label = (scatter.config.data.datasets[tooltipItem.index].data[tooltipItem.index].title);
-                        // t_label += " (" + scatter.parsed.x + ", " + scatter.parsed.y + ")";
-                       // return t_label;
-                      //},
-                      // afterLabel: (tooltipItem, data) => [`${x}: ${tooltipItem.xLabel}`, `${y}: ${tooltipItem.yLabel}`]
+                  
+                //  return label;
+                //}
 
-                      //title: (tooltipItem, data) => "New title"
-                          
-                          // let tit = titles[coords.dataIndex];
-                          // titles += " (" + ctx.parsed.x + ", " + ctx.parsed.y + ")";
-                          // return labels[coords.dataIndex];
-                          //label = datasets.labels[titles.datasetIndex];
-                          //return label;
-                            
-                            
-                        
-                    }
-                // }
+                //label: function(tooltipItem, scatter){
+                  // let t_label = (scatter.config.data.datasets[tooltipItem.index].data[tooltipItem.index].title);
+                  // t_label += " (" + scatter.parsed.x + ", " + scatter.parsed.y + ")";
+                  // return t_label;
+                //},
+                // afterLabel: (tooltipItem, data) => [`${x}: ${tooltipItem.xLabel}`, `${y}: ${tooltipItem.yLabel}`]
+
+                //title: (tooltipItem, data) => "New title"
+                    
+                    // let tit = titles[coords.dataIndex];
+                    // titles += " (" + ctx.parsed.x + ", " + ctx.parsed.y + ")";
+                    // return labels[coords.dataIndex];
+                    //label = datasets.labels[titles.datasetIndex];
+                    //return label;
+                      
+                      
+                  
+                    //}
+                
             },
           borderWidth: 0,
 
