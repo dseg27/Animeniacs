@@ -235,9 +235,22 @@ d3.csv(filename).then(function(loadedData){
       },
       options: {
         tooltips: {
+          displayColors: false,
           callbacks: {
             title:function(item, everything){
               return;
+            },
+            label: function(tooltipItem, all) {
+              // console.log(tooltipItem);
+              // console.log(all);
+
+              let year = tooltipItem.xLabel;
+              let titleCount = tooltipItem.yLabel;
+              let label = all.datasets[tooltipItem.datasetIndex].label;
+
+              return[
+                titleCount + ' '+ label +' titles released in ' + year 
+              ]
             },
             // label: function(item, everything){
               // console.log(item);
