@@ -23,7 +23,7 @@ def formatGenreCount(df,source):
     genre_count_df = pd.DataFrame({'Genre': genre_df_top.index, source: genre_df_top.values})
     return genre_count_df
 
-def reformatLiveGenre(genre_df):
+def reformatNetflixGenre(genre_df):
     for index, row in genre_df.iterrows():
         if row['TV Action & Adventure'] == '1':
             genre_df.loc[index,'Action'] = '1'
@@ -48,6 +48,14 @@ def reformatLiveGenre(genre_df):
             genre_df.loc[index,'Drama'] = '1'
     return genre_df 
 
+def reformatDisneyGenre(genre_df):
+    for index, row in genre_df.iterrows():
+        if row['Action & Adventure'] == '1':
+            genre_df.loc[index,'Action'] = '1'
+            genre_df.loc[index,'Adventure'] = '1'
+
+    return genre_df 
+
 def genreAnimeCount(df,id,genreCol):
 
     genre_df = df[[id,genreCol]]
@@ -67,6 +75,7 @@ def genreAnimeCount(df,id,genreCol):
 
 def genreLiveCount(df,id,genreCol):
 
+    source = list(df.iat[0,0])
     genre_df = df[[id,genreCol]]
     unique_list = []
 
@@ -81,21 +90,66 @@ def genreLiveCount(df,id,genreCol):
             if x in unique_list:
                 genre_df.loc[index,x] = '1'
     
-    genre_df = reformatLiveGenre(genre_df)            
+    if source[0] == 'h':
+        genre_df = genre_df.rename(columns={'Science Fiction': 'Fantasy'})
+
+    if source[0] == 'd':
+        genre_df = genre_df.rename(columns={'Action-Adventure': 'Action & Adventure'})
+        genre_df = reformatDisneyGenre(genre_df)
+    elif source[0] == 'n':
+        genre_df = reformatNetflixGenre(genre_df)            
     return genre_df
+
+def genreLiveCountTest(df,id,genreCol):
+
+    source = list(df.iat[0,0])
+    print(source[0])
+    genre_df = df[[id,genreCol]]
+    unique_list = []
+
+    for index, row in genre_df.iterrows():
+        genre_list = genreList(row[genreCol])
+
+        for x in genre_list:
+            if x not in unique_list:
+                unique_list.append(x)
+                
+        for x in genre_list:
+            if x in unique_list:
+                genre_df.loc[index,x] = '1'
+
+    if source[0] == 'h':
+        genre_df = genre_df.rename(columns={'Science Fiction': 'Fantasy'})
+
+    if source[0] == 'd':
+        genre_df = genre_df.rename(columns={'Action-Adventure': 'Action & Adventure'})
+        
+    #genre_df = reformatLiveGenre(genre_df)            
+    return genre_df
+
+def masterGenreTest(f_df):
+    n_df,am_df,d_df,h_df = splitLiveActionDF(f_df)
+
+    am_genre_df = genreLiveCountTest(am_df,'show_id','listed_in')
+    d_genre_df = genreLiveCountTest(d_df,'show_id','listed_in')
+    h_genre_df = genreLiveCountTest(h_df,'show_id','listed_in')
+
+    am_genre_df.to_csv('coles_practice/csv/amazon_genres.csv', index=False)
+    h_genre_df.to_csv('coles_practice/csv/disney_genres.csv', index=False)
+    d_genre_df.to_csv('coles_practice/csv/hulu_genres.csv', index=False)
 
 def masterGenre(a_df,f_df):
     n_df,am_df,d_df,h_df = splitLiveActionDF(f_df)
 
     n_genre_df = genreLiveCount(n_df,'show_id','listed_in')
-    am_genre_df = genreLiveCount(am_df,'show_id','listed_in')
+    am_genre_df = genreAnimeCount(am_df,'show_id','listed_in')
     d_genre_df = genreLiveCount(d_df,'show_id','listed_in')
     h_genre_df = genreLiveCount(h_df,'show_id','listed_in')
 
-    n_genre_counts = formatGenreCount(n_genre_df,'Netflix')
-    am_genre_counts = formatGenreCount(am_genre_df,'Amazon')
-    d_genre_counts = formatGenreCount(d_genre_df,'Disney')
-    h_genre_counts = formatGenreCount(h_genre_df,'Hulu')
+    n_genre_counts = formatGenreCount(n_genre_df,'netflix')
+    am_genre_counts = formatGenreCount(am_genre_df,'amazon')
+    d_genre_counts = formatGenreCount(d_genre_df,'disney')
+    h_genre_counts = formatGenreCount(h_genre_df,'hulu')
 
     a_genre_df = genreAnimeCount(a_df,'uid','genre')
     anime_genre_counts = formatGenreCount(a_genre_df,'Anime')
@@ -104,6 +158,8 @@ def masterGenre(a_df,f_df):
     merged_genre_counts = merged_genre_counts.merge(am_genre_counts,how='inner',on='Genre')
     merged_genre_counts = merged_genre_counts.merge(d_genre_counts,how='inner',on='Genre')
     merged_genre_counts = merged_genre_counts.merge(h_genre_counts,how='inner',on='Genre')
+    merged_genre_counts = merged_genre_counts.rename(columns={'Anime':'anime','Genre':'source'})
+    merged_genre_counts = merged_genre_counts[['source','netflix','hulu','amazon','disney','anime']]
 
     merged_genre_counts.to_csv('Updated Website/chart_data/top5genres_stack.csv',index=False)
 
