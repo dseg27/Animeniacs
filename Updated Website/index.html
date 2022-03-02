@@ -163,8 +163,9 @@
               <!-- Dropdown --> 
               <!-- INPUT -->
 
-             <label>1: Choose a live action title:</label>
-             <select class = "s2" id='selUser' style='width: 200px;'>
+             <label style="color: rgb(161, 100, 7);font-weight: bold;"
+             >1: Choose a live action title:</label>
+             <select class = "s2" id='selUser' style='width: 400px;'>
 
               <script>
                 var live_data = fetch("clean_live.json")
@@ -185,10 +186,13 @@
               </script>
              </select>
 
+             <br>
+             <br>
+
              <!-- BUTTON THAT DISPLAYS OUTPUT -->
-            <input type='button' value='2: Click To Find Your Recommended Anime' id='but_read'>
+            <input type='button' style="color: rgb(161, 100, 7);font-weight:bolder;" value='2: Click To Find Your Recommended Anime' id='but_read'>
             <br/>
-             <div id='result'></div>
+             <div id='result' style="background: rgb(241, 197, 130);font-weight:bold;"></div>
             </div>
 
           </div>
@@ -220,7 +224,7 @@
             <!-- <label class="tm-text-blue">First Block</label> --> 
           </div>
             <div class = "chart_box">
-              <div class="chart-container" style="position: relative;height:50vh; width:50vw ">
+              <div class="chart-container" style="position: relative;height:65vh; width:65vw ">
                 <canvas id="scatter" ></canvas>
               </div> 
             </div>
@@ -236,7 +240,7 @@
             </div>
             <!-- <label class="tm-text-blue">Second Block </label>  -->    
             <div class = "chart_box">    
-            <div class="chart-container" style="position: relative; height:50vh; width:50vw ">
+            <div class="chart-container" style="position: relative; height:65vh; width:65vw ">
                 <canvas id="line" ></canvas>
             </div> 
             </div>
@@ -248,7 +252,7 @@
       <!-- Bottom left image block -->
       <div class="col-lg-6">
         <div class="tm-activity-block">
-            <label class="tm-text-blue">Third Block</label>           
+            <label class="tm-text-blue"></label>           
             <div class="chart-container" style="position: relative; height:50vh; width:30vw">
                 <canvas id="bar2" ></canvas>
             </div> 
@@ -258,7 +262,7 @@
       <!-- Bottom right image block -->
       <div class="col-lg-6">
         <div class="tm-activity-block">
-            <label class="tm-text-blue">Fourth Block</label>           
+            <label class="tm-text-blue"></label>           
             <div class="chart-container" style="position: relative; height:50vh; width:30vw">
                 <canvas id="bar3" ></canvas>
             </div> 
