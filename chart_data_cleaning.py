@@ -145,7 +145,7 @@ def movieVSshow(a_df,l_df):
 
     c_df_pivot = c_df_group.pivot(index='source',columns='type')
     c_df_pivot = c_df_pivot.reset_index()
-    c_df_pivot.columns = ['source','Movie','TV Show']
+    c_df_pivot.columns = ['source','count_movie','count_show']
     c_df_pivot.to_csv('Updated Website/chart_data/movie_vs_show_count.csv', index=False)
 
 def scatterCSV(a_df):
