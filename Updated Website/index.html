@@ -33,6 +33,15 @@
     <!-- Select2 JS --> 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!-- Chart.js import -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <!-- Chart.js import -->
+    <link rel="stylesheet" href="css/uneven_cols.css" />
+
+    <script src="js/charts.js"></script>
+    
   </head>
 
   <body>
@@ -182,71 +191,85 @@
     </section>
 
     <!-- Extra Visuals -->
-    <div class="container" id="activities">
-      <div class="row">
-        <div class="col-12">
-          <div class="tm-parallax">
-            <header class="tm-parallax-header">
-              <h2 class="">CHARTS AND GRAPHS</h2>
-            </header>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="tm-activity-block">
-            <div class="tm-activity-img-container">
-              <img src="img/img-01.jpg" alt="Image" class="tm-activity-img" height="200" width="120"/>
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Data Visual #1</h3>
-              <p>
-                chart or graph here
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="tm-activity-block mr-lg-0 ml-lg-auto">
-            <div class="tm-activity-img-container">
-              <img src="img/img-02.jpg" alt="Image" class="tm-activity-img" height="180" width="200" />
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">   Data Visual #2</h3>
-              <p>
-                chart or graph here
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="tm-activity-block">
-            <div class="tm-activity-img-container">
-              <img src="img/img-03.jpg" alt="Image" class="tm-activity-img" height="180" width="220" />
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">      Data Visual 3</h3>
-              <p>
-                Chart or graph here
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="tm-activity-block mr-lg-0 ml-lg-auto">
-            <div class="tm-activity-img-container">
-              <img src="img/img-04.jpg" alt="Image" class="tm-activity-img" />
-            </div>
-            <div class="tm-activity-block-text">
-              <h3 class="tm-text-blue">Data Visual 4</h3>
-              <p>
-                Chart or graph here
-              </p>
-            </div>
-          </div>
+        <!-- Top 25 -->
+  <div class="container" id="activities">
+    <div class="row">
+      <div class="col-12">
+        <div class="tm-parallax">
+          <header class="tm-parallax-header">
+            <h2 class="">Top 25</h2>
+          </header>
         </div>
       </div>
     </div>
+    <div class="row">
+
+      <!-- Top left image block -->
+      <div class="col-lg-6">
+        <div class="tm-activity-block">
+        <div class= "desc_box">
+          <p> <small>Watching a great show doesn't mean a huge commitment: 
+            explore top 50 ranked animes from MyAnimeList. 
+            Whether you want to watch 10 episodes or 1000, each of these titles are highly rated. </small></p> 
+            <!-- <label class="tm-text-blue">First Block</label> --> 
+          </div>
+            <div class = "chart_box">
+              <div class="chart-container" style="position: relative;height:50vh; width:30vw ">
+                <canvas id="scatter" ></canvas>
+              </div> 
+            </div>
+        </div>
+        
+      </div>
+
+      <!-- Top right image block -->
+      <div class="col-lg-6">
+        <div class="tm-activity-block">
+          <div class= "desc_box">
+          <p> <small> See how anime productions have changed in the last 20 years compared to other live action titles.
+              </small></p> 
+            </div>
+            <!-- <label class="tm-text-blue">Second Block </label>  -->    
+            <div class = "chart_box">    
+            <div class="chart-container" style="position: relative; height:50vh; width:30vw ">
+                <canvas id="line" ></canvas>
+            </div> 
+            </div>
+        </div>
+      </div>
+
+
+
+      <!-- Bottom left image block -->
+      <div class="col-lg-6">
+        <div class="tm-activity-block">
+            <label class="tm-text-blue">Third Block</label>           
+            <div class="chart-container" style="position: relative; height:50vh; width:30vw">
+                <canvas id="bar2" ></canvas>
+            </div> 
+        </div>
+      </div>
+
+      <!-- Bottom right image block -->
+      <div class="col-lg-6">
+        <div class="tm-activity-block">
+            <label class="tm-text-blue">Fourth Block</label>           
+            <div class="chart-container" style="position: relative; height:50vh; width:30vw">
+                <canvas id="bar3" ></canvas>
+            </div> 
+        </div>
+      </div>
+
+
+    </div> <!-- end of image blocks -->
+  </div>
+
+
+
+
+
+
+
     
     <footer class="container tm-footer">
       <div class="row tm-footer-row">
