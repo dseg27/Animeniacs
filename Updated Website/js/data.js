@@ -9,6 +9,17 @@
 //             }
 //         })
 
+// // PRINT LIVE ACTION TITLE NAMES TO CONSOLE
+// var live_data = fetch("live_data.json")
+//         .then(response => response.json())
+//         .then(live_data =>{
+//             for (i=0; i<live_data.length; i++){
+//                 console.log(live_data[i].title);
+//             }
+//         })
+
+
+
 // CREATES A LIST 
 var anime_data = fetch("data.json")
             .then(response => response.json())
@@ -18,16 +29,6 @@ var anime_data = fetch("data.json")
                 }
             console.log(anime_data[0])
             })
-
-
-// // PRINT LIVE ACTION TITLE NAMES TO CONSOLE
-// var live_data = fetch("live_data.json")
-//         .then(response => response.json())
-//         .then(live_data =>{
-//             for (i=0; i<live_data.length; i++){
-//                 console.log(live_data[i].title);
-//             }
-//         })
 
 
 // CREATES A LIST 
