@@ -21,7 +21,7 @@
 
 
 // CREATES A LIST 
-var anime_data = fetch("data.json")
+var anime_data = fetch("clean_anime.json")
             .then(response => response.json())
             .then(anime_data =>{
                 for (i=0; i<anime_data.length; i++){
@@ -32,7 +32,7 @@ var anime_data = fetch("data.json")
 
 
 // CREATES A LIST 
-var live_data = fetch("live_data.json")
+var live_data = fetch("clean_live.json")
             .then(response => response.json())
             .then(live_data =>{
                 for (i=0; i<live_data.length; i++){
