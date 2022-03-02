@@ -37,7 +37,7 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <!-- Chart.js import -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <!-- Chart.js import -->
+    <!-- new css file import -->
     <link rel="stylesheet" href="css/uneven_cols.css" />
 
     <script src="js/charts.js"></script>
@@ -165,7 +165,7 @@
              <select class = "s2" id='selUser' style='width: 200px;'>
 
               <script>
-                var live_data = fetch("live_data.json")
+                var live_data = fetch("recs_data.json")
                .then(response => response.json())
                .then(live_data =>{
                     for (i=0; i<live_data.length; i++){
