@@ -52,8 +52,23 @@ $(document).ready(function(){
 
     // Read selected option
     $('#but_read').click(function(){
-        var title = $('#selUser option:selected').text();
-        $('#result').html("Selected Title: " + title);
+        // create list of anime titles from anime json
+        var anime_titles = fetch("clean_anime.json")
+            .then(response => response.json())
+            .then(anime_data =>{
+                for (i=0; i<anime_data.length; i++){
+                    anime_data[i] = anime_data[i].title;
+                }
+        // create list recs[] to hold 5 anime recommendation titles 
+        // and print the result 
+            recs = []; 
+            for (i=0; i<5; i++){
+                recs = recs + anime_data[i] + "<br>";
+            }
+            
+            console.log(anime_data[1])
+            $('#result').html("Your top 5 recommended animes are: <br> <br>" + recs);
+            })
       });
   });
 

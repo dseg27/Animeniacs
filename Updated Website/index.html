@@ -161,16 +161,21 @@
               </header>
 
               <!-- Dropdown --> 
+              <!-- INPUT -->
+
              <label>1: Choose a live action title:</label>
              <select class = "s2" id='selUser' style='width: 200px;'>
 
               <script>
-                var live_data = fetch("live_data.json")
+                var live_data = fetch("clean_live.json")
                .then(response => response.json())
                .then(live_data =>{
+                  // create list of titles from json file
                     for (i=0; i<live_data.length; i++){
                         live_data[i] = live_data[i].title;
                     }
+                  // create the dropdown menu options for the first 51 live action titles 
+                  // (couldn't use all 21+k titles as it really slowed the website down, so we'll have to tweak..)
                     let text = "";
                     for (let c = 0; c < 50; c++) { 
                         text += "<option value='" + c +"'>" + live_data[c] + "</option> <br>";
