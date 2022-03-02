@@ -300,27 +300,27 @@ d3.csv(filename2).then(function(loadedData){
   for (let i=0; i<loadedData.length; i++){
   
     
-    if (loadedData[i].source == "netflix"){
+    if (loadedData[i].source == "Netflix"){
       let netflixdataM = loadedData[i].count_movie;
       let netflixdataS = loadedData[i].count_show;
       netflix.push(netflixdataM, netflixdataS);
     }
-    else if (loadedData[i].source == "hulu") {
+    else if (loadedData[i].source == "Hulu") {
       let huludataM = loadedData[i].count_movie;
       let huludataS = loadedData[i].count_show;
       hulu.push(huludataM, huludataS);
     }
-    else if (loadedData[i].source == "amazon") {
+    else if (loadedData[i].source == "Amazon") {
       let amazondataM = loadedData[i].count_movie; 
       let amazondataS = loadedData[i].count_show;
       amazon.push(amazondataM, amazondataS);
     }
-    else if (loadedData[i].source == "disney") {
+    else if (loadedData[i].source == "Disney") {
       let disneydataM = loadedData[i].count_movie; 
       let disneydataS = loadedData[i].count_show;
       disney.push(disneydataM, disneydataS);
     }
-    else if (loadedData[i].source == "anime"){
+    else if (loadedData[i].source == "Anime"){
       let animedataM = loadedData[i].count_movie; 
       let animedataS = loadedData[i].count_show;
       anime.push(animedataM,animedataS );
