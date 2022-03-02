@@ -107,6 +107,9 @@ d3.csv(filename1).then(function(loadedData){
         ]},
         
         options: {
+          responsive: true,
+          maintainAspectRatio: false,
+
           legend: {
             display: false,
           },
@@ -160,6 +163,7 @@ d3.csv(filename1).then(function(loadedData){
           borderWidth: 0,
 
           responsive: true,
+          maintainAspectRatio: false,
           title: {
             display: true,
             text: 'Top 50 Animes Ranked: Length of Shows vs Scores',
@@ -261,6 +265,7 @@ d3.csv(filename).then(function(loadedData){
           text: ['Anime Growth Over time: New Titles released each year']
         }, 
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           xAxes: [ {
             display: true,
@@ -370,6 +375,7 @@ d3.csv(filename2).then(function(loadedData){
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           yAxes: [ {
             display: true,
@@ -482,6 +488,8 @@ d3.csv(filename3).then(function(loadedData){
               }
             }]
           },
+          responsive: true,
+          maintainAspectRatio: false,
           title: {
             display: true,
             text: ['Number of Titles in Top 5 Anime Genres by Platform']

@@ -21,6 +21,8 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <!-- Chart.js import -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <!-- Chart.js import -->
+    <link rel="stylesheet" href="css/uneven_cols.css" />
 
   </head>
 
@@ -144,28 +146,44 @@
         <!-- Top left image block -->
         <div class="col-lg-6">
           <div class="tm-activity-block">
-              <label class="tm-text-blue">First Block</label>           
-              <div class="chart-container" style="position: relative; height:30vh; width:40vw">
-                 <canvas id="scatter" ></canvas>
-              </div> 
+          <div class= "desc_box">
+            <p> <small>Watching a great show doesn't mean a huge commitment: 
+              explore top 50 ranked animes from MyAnimeList. 
+              Whether you want to watch 10 episodes or 1000, each of these titles are highly rated. </small></p> 
+              <!-- <label class="tm-text-blue">First Block</label> --> 
+            </div>
+              <div class = "chart_box">
+                <div class="chart-container" style="position: relative;height:50vh; width:30vw ">
+                  <canvas id="scatter" ></canvas>
+                </div> 
+             </div>
           </div>
+          
         </div>
 
         <!-- Top right image block -->
         <div class="col-lg-6">
           <div class="tm-activity-block">
-              <label class="tm-text-blue">Second Block</label>           
-              <div class="chart-container" style="position: relative; height:30vh; width:40vw">
+            <div class= "desc_box">
+            <p> <small> See how anime productions have changed in the last 20 years compared to other live action titles.
+               </small></p> 
+              </div>
+              <!-- <label class="tm-text-blue">Second Block </label>  -->    
+              <div class = "chart_box">    
+              <div class="chart-container" style="position: relative; height:50vh; width:30vw ">
                  <canvas id="line" ></canvas>
               </div> 
+              </div>
           </div>
         </div>
+
+  
 
         <!-- Bottom left image block -->
         <div class="col-lg-6">
           <div class="tm-activity-block">
               <label class="tm-text-blue">Third Block</label>           
-              <div class="chart-container" style="position: relative; height:30vh; width:40vw">
+              <div class="chart-container" style="position: relative; height:50vh; width:30vw">
                  <canvas id="bar2" ></canvas>
               </div> 
           </div>
@@ -175,7 +193,7 @@
         <div class="col-lg-6">
           <div class="tm-activity-block">
               <label class="tm-text-blue">Fourth Block</label>           
-              <div class="chart-container" style="position: relative; height:30vh; width:40vw">
+              <div class="chart-container" style="position: relative; height:50vh; width:30vw">
                  <canvas id="bar3" ></canvas>
               </div> 
           </div>
