@@ -168,22 +168,26 @@
              <select class = "s2" id='selUser' style='width: 400px;'>
 
               <script>
-                var live_data = fetch("clean_live.json")
+                var final_data = fetch("final.json")
                .then(response => response.json())
-               .then(live_data =>{
+               .then(final_data =>{
                   // create list of titles from json file
-                    for (i=0; i<live_data.length; i++){
-                        live_data[i] = live_data[i].title;
+                  final_data_live_action_titles = [];
+                
+                    for (i=0; i<final_data.length; i++){
+                        final_data_live_action_titles[i] = final_data[i].title; 
                     }
                   // create the dropdown menu options for the first 51 live action titles 
                   // (couldn't use all 21+k titles as it really slowed the website down, so we'll have to tweak..)
                     let text = "";
                     for (let c = 0; c < 50; c++) { 
-                        text += "<option value='" + c +"'>" + live_data[c] + "</option> <br>";
+                        text += "<option value='" + c +"'>" + final_data_live_action_titles[c] + "</option> <br>";
                         document.getElementById("selUser").innerHTML = text; 
                       }             
                 }) 
               </script>
+
+
              </select>
 
              <br>
@@ -227,6 +231,12 @@
               <div class="chart-container" style="position: relative;height:65vh; width:65vw ">
                 <canvas id="scatter" ></canvas>
               </div> 
+              <div class= "desc_box">
+                <p> <small>Watching a great show doesn't mean a huge commitment: 
+                  explore top 50 ranked animes from MyAnimeList. 
+                  Whether you want to watch 10 episodes or 1000, each of these titles are highly rated. </small></p> 
+                  <!-- <label class="tm-text-blue">First Block</label> --> 
+                </div>
             </div>
         <!-- </div> -->
         <br>
@@ -258,6 +268,10 @@
             <div class="chart-container" style="position: relative; height:65vh; width:65vw ">
                 <canvas id="line" ></canvas>
             </div> 
+            <div class= "desc_box">
+              <p> <small> See how anime productions have changed in the last 20 years compared to other live action titles. The suspected reason for the drop-off in 2020 is that Covid halted production on new anime titles.
+                  </small></p> 
+                </div>
             </div>
         <!-- </div> -->
         <br>
@@ -301,17 +315,7 @@
 
 
     
-    <footer class="container tm-footer">
-      <div class="row tm-footer-row">
-        <p class="col-md-10 col-sm-12 mb-0">
-          Design:
-          <a rel="nofollow" href="https://www.facebook.com/tooplate" class="tm-footer-link">Tooplate</a>
-        </p>
-        <div class="col-md-2 col-sm-12 scrolltop">
-          <div class="scroll icon"><i class="fa fa-4x fa-angle-up"></i></div>
-        </div>
-      </div>
-    </footer>
+    
 
     <!-- <script src="js/jquery-1.9.1.min.js"></script> -->
     <!-- Single Page Nav plugin works with this version of jQuery -->
