@@ -161,16 +161,22 @@
               </header>
 
               <!-- Dropdown --> 
-             <label>1: Choose a live action title:</label>
-             <select class = "s2" id='selUser' style='width: 200px;'>
+              <!-- INPUT -->
+
+             <label style="color: rgb(161, 100, 7);font-weight: bold;"
+             >1: Choose a live action title:</label>
+             <select class = "s2" id='selUser' style='width: 400px;'>
 
               <script>
-                var live_data = fetch("live_data.json")
+                var live_data = fetch("clean_live.json")
                .then(response => response.json())
                .then(live_data =>{
+                  // create list of titles from json file
                     for (i=0; i<live_data.length; i++){
                         live_data[i] = live_data[i].title;
                     }
+                  // create the dropdown menu options for the first 51 live action titles 
+                  // (couldn't use all 21+k titles as it really slowed the website down, so we'll have to tweak..)
                     let text = "";
                     for (let c = 0; c < 50; c++) { 
                         text += "<option value='" + c +"'>" + live_data[c] + "</option> <br>";
@@ -180,11 +186,15 @@
               </script>
              </select>
 
-            <input type='button' value='2: Click To Find Your Recommended Anime' id='but_read'>
+             <br>
+             <br>
 
+             <!-- BUTTON THAT DISPLAYS OUTPUT -->
+            <input type='button' style="color: rgb(161, 100, 7);font-weight:bolder;" value='2: Click To Find Your Recommended Anime' id='but_read'>
             <br/>
-             <div id='result'></div>
+             <div id='result' style="background: rgb(241, 197, 130);font-weight:bold;"></div>
             </div>
+
           </div>
         </div>
       </div>
@@ -205,10 +215,23 @@
     <div class="row">
 
       <!-- Top left image block -->
+<<<<<<< HEAD
       <div class="col-lg-6">
         <div class="tm-activity-block">
             <div class = "chart_box">
               <div class="chart-container" style="position: relative;height:50vh; width:28vw ">
+=======
+      <div class="col-lg-12">
+        <!-- <div class="tm-activity-block"> -->
+        <div class= "desc_box">
+          <p style="font-weight: bold;"> Watching a great show doesn't mean a huge commitment: 
+            explore top 50 ranked animes from MyAnimeList. 
+            Whether you want to watch 10 episodes or 1000, each of these titles are highly rated:</p> 
+            <!-- <label class="tm-text-blue">First Block</label> --> 
+          </div>
+            <div class = "chart_box">
+              <div class="chart-container" style="position: relative;height:65vh; width:65vw ">
+>>>>>>> Diana
                 <canvas id="scatter" ></canvas>
               </div> 
               <div class= "desc_box">
@@ -218,16 +241,42 @@
                   <!-- <label class="tm-text-blue">First Block</label> --> 
                 </div>
             </div>
-        </div>
-        
+        <!-- </div> -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
       </div>
 
+        <br>
+        <br>
+        <br>
+
       <!-- Top right image block -->
+<<<<<<< HEAD
       <div class="col-lg-6">
         <div class="tm-activity-block">
             <!-- <label class="tm-text-blue">Second Block </label>  -->    
             <div class = "chart_box">    
             <div class="chart-container" style="position: relative; height:50vh; width:28vw ">
+=======
+      <div class="col-lg-12">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- <div class="tm-activity-block"> -->
+          <div class= "desc_box">
+          <p style="font-weight: bold;"> See how anime productions have changed in the last 20 years compared to other live action titles.
+              </p> 
+            </div>
+            <!-- <label class="tm-text-blue">Second Block </label>  -->    
+            <div class = "chart_box">    
+            <div class="chart-container" style="position: relative; height:65vh; width:65vw ">
+>>>>>>> Diana
                 <canvas id="line" ></canvas>
             </div> 
             <div class= "desc_box">
@@ -235,7 +284,13 @@
                   </small></p> 
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
       </div>
 
 
@@ -243,7 +298,11 @@
       <!-- Bottom left image block -->
       <div class="col-lg-6">
         <div class="tm-activity-block">
+<<<<<<< HEAD
             <!-- <label class="tm-text-blue">Third Block</label>            -->
+=======
+            <label class="tm-text-blue"></label>           
+>>>>>>> Diana
             <div class="chart-container" style="position: relative; height:50vh; width:30vw">
                 <canvas id="bar2" ></canvas>
             </div> 
@@ -253,7 +312,11 @@
       <!-- Bottom right image block -->
       <div class="col-lg-6">
         <div class="tm-activity-block">
+<<<<<<< HEAD
             <!-- <label class="tm-text-blue">Fourth Block</label>            -->
+=======
+            <label class="tm-text-blue"></label>           
+>>>>>>> Diana
             <div class="chart-container" style="position: relative; height:50vh; width:30vw">
                 <canvas id="bar3" ></canvas>
             </div> 
