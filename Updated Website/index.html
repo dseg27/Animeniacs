@@ -180,7 +180,7 @@
                   // create the dropdown menu options for the first 51 live action titles 
                   // (couldn't use all 21+k titles as it really slowed the website down, so we'll have to tweak..)
                     let text = "";
-                    for (let c = 0; c < 50; c++) { 
+                    for (let c = 0; c < 1000; c++) { 
                         text += "<option value='" + c +"'>" + final_data_live_action_titles[c] + "</option> <br>";
                         document.getElementById("selUser").innerHTML = text; 
                       }             
@@ -224,19 +224,13 @@
         <div class= "desc_box">
           <p style="font-weight: bold;"> Watching a great show doesn't mean a huge commitment: 
             explore top 50 ranked animes from MyAnimeList. 
-            Whether you want to watch 10 episodes or 1000, each of these titles are highly rated:</p> 
+            Whether you want to watch 10 episodes or 1000, each of these titles are highly rated.</p> 
             <!-- <label class="tm-text-blue">First Block</label> --> 
           </div>
             <div class = "chart_box">
               <div class="chart-container" style="position: relative;height:65vh; width:65vw ">
                 <canvas id="scatter" ></canvas>
               </div> 
-              <div class= "desc_box">
-                <p> <small>Watching a great show doesn't mean a huge commitment: 
-                  explore top 50 ranked animes from MyAnimeList. 
-                  Whether you want to watch 10 episodes or 1000, each of these titles are highly rated. </small></p> 
-                  <!-- <label class="tm-text-blue">First Block</label> --> 
-                </div>
             </div>
         <!-- </div> -->
         <br>
@@ -260,7 +254,7 @@
         <br>
         <!-- <div class="tm-activity-block"> -->
           <div class= "desc_box">
-          <p style="font-weight: bold;"> See how anime productions have changed in the last 20 years compared to other live action titles.
+          <p style="font-weight: bold;"> See how anime productions have changed in the last 20 years compared to other live action titles. The suspected reason for the drop-off in 2020 is that Covid halted production on new anime titles.
               </p> 
             </div>
             <!-- <label class="tm-text-blue">Second Block </label>  -->    
@@ -268,10 +262,6 @@
             <div class="chart-container" style="position: relative; height:65vh; width:65vw ">
                 <canvas id="line" ></canvas>
             </div> 
-            <div class= "desc_box">
-              <p> <small> See how anime productions have changed in the last 20 years compared to other live action titles. The suspected reason for the drop-off in 2020 is that Covid halted production on new anime titles.
-                  </small></p> 
-                </div>
             </div>
         <!-- </div> -->
         <br>
