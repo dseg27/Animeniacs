@@ -18,6 +18,15 @@
 //             }
 //         })
 
+// // PRINT FINAL.JSON RESULTS TO CONSOLE 
+// var final_data = fetch("final.json")
+//         .then(response => response.json())
+//         .then(final_data => {
+//             for (i=0; i<5; i++){
+//                 console.log(final_data[i].recommended_animes)
+//             };
+//         })
+
 
 
 // CREATES A LIST 
@@ -40,6 +49,17 @@ var live_data = fetch("clean_live.json")
                 }
             console.log(live_data[0])
             })
+
+// CREATES A LIST 
+
+var final_data = fetch("final.json")
+            .then(response => response.json())
+            .then(final_data=>{
+                for (i=0; i<final_data.length; i++){
+                    final_data[i] = final_data[i].title;
+                }
+            console.log(final_data[0])
+            })
   
 
 
@@ -50,26 +70,24 @@ $(document).ready(function(){
     // Initialize select2
     $(".s2").select2();
 
-    // Read selected option
-    $('#but_read').click(function(){
-        // create list of anime titles from anime json
-        var anime_titles = fetch("clean_anime.json")
-            .then(response => response.json())
-            .then(anime_data =>{
-                for (i=0; i<anime_data.length; i++){
-                    anime_data[i] = anime_data[i].title;
-                }
-        // create list recs[] to hold 5 anime recommendation titles 
-        // and print the result 
-            recs = []; 
-            for (i=0; i<5; i++){
-                recs = recs + anime_data[i] + "<br>";
-            }
-            
-            console.log(anime_data[1])
-            $('#result').html("Your top 5 recommended animes are: <br> <br>" + recs);
+     // Read selected option
+  $('#but_read').click(function(){
+    // assign value to selection 
+    var c = $('#selUser').val();
+      
+    // create list of recommendations
+    var final_data = fetch("final.json")
+          .then(response => response.json())
+          .then(final_data => {
+              final_anime_recommendations = []; 
+              for (i=0; i<final_data.length; i++){
+                  final_anime_recommendations[i] = final_data[i].recommended_animes;                  
+              }
+              recs = final_anime_recommendations[c];
+             
+              // print the result 
+              $('#result').html("Your top 5 recommended animes are: <br> <br>" + recs);          
+
             })
-      });
+        });
   });
-
-
