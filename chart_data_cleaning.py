@@ -289,13 +289,7 @@ def sentenceEmbedding(anime_df,la_df):
             try:
                 mydict[float(cos_sim[i][x]*-100)] = anime_df["title"][x] + ' (' + (str(round(float(cos_sim[i][x]*100))) +'% Match)')
             except KeyError:
-                continue 
-            #print(mydict)
-            # try:
-            #     mydict[anime_df["title"][x],(('%' + str(round(float(cos_sim[i][x]*100)))))] = cos_sim[i][x]
-            # except KeyError:
-            #     continue  
-            # print(mydict)    
+                continue  
         # find the max value in all the columns
         #top2 = sorted(mydict,keys=mydict.get,reverse=True)[:5]
         s = SortedDict(mydict)
@@ -308,5 +302,7 @@ def sentenceEmbedding(anime_df,la_df):
 
     la_df.head()
 
-    # Export new csv
+    # Export new csv and json
     la_df.to_csv('Final Resources/live_actions_with_anime_recs.csv')
+    la_df = la_df[['title','rec1','rec2','rec3','rec4','rec5']]
+    la_df.to_json('Updated Website/final_live_actions_with_anime_recs.json', orient='records')
