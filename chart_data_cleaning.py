@@ -1,5 +1,7 @@
 import pandas as pd
 from langdetect import detect
+from sortedcontainers import SortedDict
+from sentence_transformers import SentenceTransformer, util
 
 def splitLiveActionDF(f_df):
     n_df = f_df.loc[f_df['source'] == 'Netflix']
@@ -245,3 +247,66 @@ def getTimeseries(a_df,l_df):
 
     merged_year_counts = l_count.merge(a_group_df,how='inner',on='release_year')
     merged_year_counts.to_csv('Updated Website/chart_data/mock_timeseries.csv',index=False)
+
+def sentenceEmbedding(anime_df,la_df):
+    # Uncomment for testing
+    # anime_df = anime_df.head(50)
+    # la_df = la_df.head(50)
+    # anime_df = anime_df.reset_index()
+    # la_df = la_df.reset_index()
+
+    # Define model from sentence_transformers
+    model = SentenceTransformer('all-MiniLM-L6-v2')
+
+    # Make a list of anime descriptions from df
+    anime_desc = anime_df['description_without_stopwords'].tolist()
+
+    # Make a list of netflix, hulu, amazon prime, disney+ descriptions
+    la_desc = la_df['description_without_stopwords'].tolist()
+
+    # Encode anime descriptions 
+    anime_embedding = model.encode(anime_desc) # Encoding the anime list
+
+    # Encode live action descriptions 
+    la_embedding = model.encode(la_desc) # Encoding the netflix list
+
+    # Compute cosine similarities
+    cos_sim = util.cos_sim(la_embedding, anime_embedding)
+    #cos_sim
+
+    la_df = la_df.reset_index()
+    anime_df = anime_df.reset_index()
+
+    # Build reccomendations column in la_df from cos_sim tensor
+    recs = []
+    # for each row in the cos_sim tensor
+    for i in range(len(cos_sim)):
+        mydict={}
+        
+        # for each col in the row
+        for x in range(len(cos_sim[i])):
+            #assign title to the column from anime_df["title"][col#]
+            try:
+                mydict[float(cos_sim[i][x]*-100)] = anime_df["title"][x] + ' (' + (str(round(float(cos_sim[i][x]*100))) +'% Match)')
+            except KeyError:
+                continue 
+            #print(mydict)
+            # try:
+            #     mydict[anime_df["title"][x],(('%' + str(round(float(cos_sim[i][x]*100)))))] = cos_sim[i][x]
+            # except KeyError:
+            #     continue  
+            # print(mydict)    
+        # find the max value in all the columns
+        #top2 = sorted(mydict,keys=mydict.get,reverse=True)[:5]
+        s = SortedDict(mydict)
+        la_df.loc[i,'rec1'] = s.values()[0]
+        la_df.loc[i,'rec2'] = s.values()[1]
+        la_df.loc[i,'rec3'] = s.values()[2]
+        la_df.loc[i,'rec4'] = s.values()[3]
+        la_df.loc[i,'rec5'] = s.values()[4]
+        #recs.append(top2)
+
+    la_df.head()
+
+    # Export new csv
+    la_df.to_csv('Final Resources/live_actions_with_anime_recs.csv')
