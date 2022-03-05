@@ -52,7 +52,7 @@ var live_data = fetch("clean_live.json")
 
 // CREATES A LIST 
 
-var final_data = fetch("final.json")
+var final_data = fetch("final_live_actions_with_anime_recs.json")
             .then(response => response.json())
             .then(final_data=>{
                 for (i=0; i<final_data.length; i++){
@@ -76,17 +76,21 @@ $(document).ready(function(){
     var c = $('#selUser').val();
       
     // create list of recommendations
-    var final_data = fetch("final.json")
+    var final_data = fetch("final_live_actions_with_anime_recs.json")
           .then(response => response.json())
           .then(final_data => {
-              final_anime_recommendations = []; 
-              for (i=0; i<final_data.length; i++){
-                  final_anime_recommendations[i] = final_data[i].recommended_animes;                  
-              }
-              recs = final_anime_recommendations[c];
+              //final_anime_recommendations = []; 
+              //or (i=0; i<final_data.length; i++){
+              //    final_anime_recommendations[i] = [final_data[i].rec1, final_data[i].rec2];                  
+              //}
+              //recs = final_anime_recommendations[c];
              
               // print the result 
-              $('#result').html("Your top 5 recommended animes are: <br> <br>" + recs);          
+              $('#result').html("Your top 5 recommended animes are: <br> <br>" + final_data[c].rec1+ 
+              "<br>"+final_data[c].rec2+ 
+              "<br>"+final_data[c].rec3+ 
+              "<br>"+final_data[c].rec4+ 
+              "<br>"+final_data[c].rec5);          
 
             })
         });
