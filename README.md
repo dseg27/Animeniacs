@@ -76,7 +76,7 @@ The user can also view charts that display anime data including top ranked shows
 ![image](https://user-images.githubusercontent.com/90593897/156945332-9e69eda1-5f27-40b8-b47e-a3edcd57f329.png)
 
 
-5. Limitations: 
+5. Limitations & Future Improvements: 
 While we had over 20,000 live action titles to work with, our website was not able to quickly load all the titles into our drop-down menu without crashing the page. Therefore, we were only able to display 1,000 live action titles for a user to choose from: 
 ![image](https://user-images.githubusercontent.com/90593897/156945459-fe2d224d-b8cb-4f89-9541-7d6be64a9fa5.png)
 
