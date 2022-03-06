@@ -30,7 +30,7 @@
 
 
 // CREATES A LIST 
-var anime_data = fetch("clean_anime.json")
+var anime_data = fetch("Updated Website/clean_anime.json")
             .then(response => response.json())
             .then(anime_data =>{
                 for (i=0; i<anime_data.length; i++){
@@ -41,7 +41,7 @@ var anime_data = fetch("clean_anime.json")
 
 
 // CREATES A LIST 
-var live_data = fetch("clean_live.json")
+var live_data = fetch("Updated Website/clean_live.json")
             .then(response => response.json())
             .then(live_data =>{
                 for (i=0; i<live_data.length; i++){
@@ -52,7 +52,7 @@ var live_data = fetch("clean_live.json")
 
 // CREATES A LIST 
 
-var final_data = fetch("final_live_actions_with_anime_recs.json")
+var final_data = fetch("Updated Website/final_live_actions_with_anime_recs.json")
             .then(response => response.json())
             .then(final_data=>{
                 for (i=0; i<final_data.length; i++){
@@ -76,7 +76,7 @@ $(document).ready(function(){
     var c = $('#selUser').val();
       
     // create list of recommendations
-    var final_data = fetch("final_live_actions_with_anime_recs.json")
+    var final_data = fetch("Updated Website/final_live_actions_with_anime_recs.json")
           .then(response => response.json())
           .then(final_data => {
               rec_1 = []; 

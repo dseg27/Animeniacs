@@ -63,7 +63,7 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // ANIME SCORE VS EPISODES SCATTER PLOT!!
 
-let filename1 = 'chart_data/chart_anime.csv'
+let filename1 = 'Updated Website/chart_data/chart_anime.csv'
 d3.csv(filename1).then(function(loadedData){
   let ep = [];
   let sc = [];
@@ -199,7 +199,7 @@ d3.csv(filename1).then(function(loadedData){
 
 // TIME SERIES CHART!!
 
-let filename = 'chart_data/mock_timeseries.csv'
+let filename = 'Updated Website/chart_data/mock_timeseries.csv'
 d3.csv(filename).then(function(loadedData){
   let livedata = [];
   let animedata = [];
@@ -289,7 +289,7 @@ d3.csv(filename).then(function(loadedData){
 
 // MOVIE VS SHOWS CHART!!
 
-let filename2 = 'chart_data/movie_vs_show_count.csv'
+let filename2 = 'Updated Website/chart_data/movie_vs_show_count.csv'
 d3.csv(filename2).then(function(loadedData){
   let netflix = [];
   let hulu = [];
@@ -398,7 +398,7 @@ d3.csv(filename2).then(function(loadedData){
 
 // STACKED GENRE BAR CHART!!
 
-let filename3 = 'chart_data/top5genres_stack.csv'
+let filename3 = 'Updated Website/chart_data/top5genres_stack.csv'
 d3.csv(filename3).then(function(loadedData){
   let netflixgenres = [];
   let hulugenres = [];
