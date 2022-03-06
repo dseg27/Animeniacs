@@ -1,11 +1,6 @@
 .desc_box{
-    width: 45%;
+    width: 95%;
     padding: 0 10px 0 0;
-    float: left;
+    float: center;
 }
 
-.chart-box{
-    width: 55%;
-    padding: 0 10px 0 0;
-    float: right;
-}
