@@ -79,14 +79,28 @@ $(document).ready(function(){
     var final_data = fetch("final.json")
           .then(response => response.json())
           .then(final_data => {
-              final_anime_recommendations = []; 
+              rec_1 = []; 
+              rec_2 = [];
+              rec_3 = [];
+              rec_4 = [];
+              rec_5 = []; 
               for (i=0; i<final_data.length; i++){
-                  final_anime_recommendations[i] = final_data[i].recommended_animes;                  
+                  rec_1[i] = final_data[i].rec1;   
+                  rec_2[i] = final_data[i].rec2;   
+                  rec_3[i] = final_data[i].rec3;   
+                  rec_4[i] = final_data[i].rec4;       
+                  rec_5[i] = final_data[i].rec5;  
               }
-              recs = final_anime_recommendations[c];
+
+                rec_1 = rec_1[c]; 
+                rec_2 = rec_2[c];
+                rec_3 = rec_3[c];
+                rec_4 = rec_4[c];
+                rec_5 = rec_5[c]; 
+              
              
               // print the result 
-              $('#result').html("Your top 5 recommended animes are: <br> <br>" + recs);          
+              $('#result').html("Your top 5 recommended animes are: <br> <br>" + "1. " + rec_1 + "<br> <br> 2. "+ rec_2 + "<br> <br> 3. " + rec_3 + "<br> <br> 4. " + rec_4 + "<br> <br> 5. " + rec_5 + "<br>" );          
 
             })
         });
