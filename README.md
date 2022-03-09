@@ -3,6 +3,8 @@
 
 ## FINAL PROJECT
 
+**https://dseg27.github.io/Animeniacs/**
+
 ### OVERVIEW
 There is currently no well-known source available to recommend anime series for people to watch, so we’re stepping in to fill this need. We've hypothesized that we can use sentence embedding and scikitLearn's cosine similarity function on anime and live action show synopses to recommend animes for someone, given their favorite live-action title. 
 
