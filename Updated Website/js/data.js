@@ -29,37 +29,37 @@
 
 
 
-// CREATES A LIST 
-var anime_data = fetch("Updated Website/clean_anime.json")
-            .then(response => response.json())
-            .then(anime_data =>{
-                for (i=0; i<anime_data.length; i++){
-                    anime_data[i] = anime_data[i].title;
-                }
-            console.log(anime_data[0])
-            })
+// // CREATES A LIST 
+// var anime_data = fetch("Updated Website/clean_anime.json")
+//             .then(response => response.json())
+//             .then(anime_data =>{
+//                 for (i=0; i<anime_data.length; i++){
+//                     anime_data[i] = anime_data[i].title;
+//                 }
+//             console.log(anime_data[0])
+//             })
 
 
-// CREATES A LIST 
-var live_data = fetch("Updated Website/clean_live.json")
-            .then(response => response.json())
-            .then(live_data =>{
-                for (i=0; i<live_data.length; i++){
-                    live_data[i] = live_data[i].title;
-                }
-            console.log(live_data[0])
-            })
+// // CREATES A LIST 
+// var live_data = fetch("Updated Website/clean_live.json")
+//             .then(response => response.json())
+//             .then(live_data =>{
+//                 for (i=0; i<live_data.length; i++){
+//                     live_data[i] = live_data[i].title;
+//                 }
+//             console.log(live_data[0])
+//             })
 
-// CREATES A LIST 
+// // CREATES A LIST 
 
-var final_data = fetch("Updated Website/final_live_actions_with_anime_recs.json")
-            .then(response => response.json())
-            .then(final_data=>{
-                for (i=0; i<final_data.length; i++){
-                    final_data[i] = final_data[i].title;
-                }
-            console.log(final_data[0])
-            })
+// var final_data = fetch("Updated Website/final_live_actions_with_anime_recs.json")
+//             .then(response => response.json())
+//             .then(final_data=>{
+//                 for (i=0; i<final_data.length; i++){
+//                     final_data[i] = final_data[i].title;
+//                 }
+//             console.log(final_data[0])
+//             })
   
 
 
